@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rincón del Genoma - Del ADN a las Proteínas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-dna"></i>
+                    <span>El Rincón del Genoma</span>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#conceptos">Conceptos</a></li>
+                    <li><a href="#transcripcion">Transcripción</a></li>
+                    <li><a href="#traduccion">Traducción</a></li>
+                    <li><a href="#codigo">Código Genético</a></li>
+                    <li><a href="#proteinas">Proteínas</a></li>
+                    <li><a href="#aplicaciones">Aplicaciones</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-background">
+            <div class="dna-helix"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">El Rincón del Genoma</h1>
+            <p class="hero-subtitle">Del ADN a las proteínas, paso a paso</p>
+            <button class="cta-button" onclick="document.getElementById('intro').scrollIntoView({behavior: 'smooth'})">
+                Comenzar a Aprender
+            </button>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <p class="intro-text">
+                El ADN contiene la información de la vida. A través del ARN, esa información se transforma en proteínas, que permiten que nuestro cuerpo funcione.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tarjetas Temáticas -->
+    <section class="topics-section">
+        <div class="container">
+            <div class="topics-grid">
+                <div class="topic-card" onclick="scrollToSection('conceptos')">
+                    <i class="fas fa-dna"></i>
+                    <h3>ADN</h3>
+                    <p>La molécula de la vida</p>
+                </div>
+                <div class="topic-card" onclick="scrollToSection('conceptos')">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>ARN</h3>
+                    <p>El mensajero genético</p>
+                </div>
+                <div class="topic-card" onclick="scrollToSection('transcripcion')">
+                    <i class="fas fa-arrow-right"></i>
+                    <h3>Transcripción</h3>
+                    <p>De ADN a ARNm</p>
+                </div>
+                <div class="topic-card" onclick="scrollToSection('traduccion')">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Traducción</h3>
+                    <p>De ARN a proteína</p>
+                </div>
+                <div class="topic-card" onclick="scrollToSection('codigo')">
+                    <i class="fas fa-code"></i>
+                    <h3>Código Genético</h3>
+                    <p>El lenguaje de la vida</p>
+                </div>
+                <div class="topic-card" onclick="scrollToSection('proteinas')">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Proteínas</h3>
+                    <p>Los constructores celulares</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dato Curioso Interactivo -->
+    <section class="fun-fact-section">
+        <div class="container">
+            <div class="fun-fact-card" id="funFactCard">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Dato Curioso sobre Genética</h3>
+                <p id="funFactText">Haz clic en el botón para descubrir datos fascinantes</p>
+                <button class="fact-button" onclick="showRandomFact()">
+                    <i class="fas fa-sync-alt"></i> Nuevo Dato
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conceptos Fundamentales -->
+    <section id="conceptos" class="concepts-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-book"></i>
+                Conceptos Fundamentales
+            </h2>
+
+            <!-- ADN -->
+            <div class="concept-card">
+                <div class="concept-header">
+                    <i class="fas fa-dna"></i>
+                    <h3>ADN (Ácido Desoxirribonucleico)</h3>
+                </div>
+                <div class="concept-content">
+                    <div class="concept-item">
+                        <h4>¿Qué es el ADN?</h4>
+                        <p>El ADN es la molécula que contiene toda la información genética de un ser vivo. Es como un manual de instrucciones que determina nuestras características.</p>
+                    </div>
+                    <div class="concept-item">
+                        <h4>Estructura del ADN</h4>
+                        <ul>
+                            <li><strong>Nucleótidos:</strong> Las unidades básicas del ADN, formadas por:
+                                <ul>
+                                    <li>Una base nitrogenada (A, T, G, C)</li>
+                                    <li>Un azúcar (desoxirribosa)</li>
+                                    <li>Un grupo fosfato</li>
+                                </ul>
+                            </li>
+                            <li><strong>Doble Hélice:</strong> Dos cadenas de nucleótidos enrolladas en forma de escalera de caracol</li>
+                        </ul>
+                    </div>
+                    <div class="concept-item">
+                        <h4>Función del ADN</h4>
+                        <p>Almacena y transmite la información genética necesaria para el desarrollo, funcionamiento y reproducción de todos los organismos vivos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARN -->
+            <div class="concept-card">
+                <div class="concept-header">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>ARN (Ácido Ribonucleico)</h3>
+                </div>
+                <div class="concept-content">
+                    <div class="concept-item">
+                        <h4>¿Qué es el ARN?</h4>
+                        <p>El ARN es una molécula similar al ADN que actúa como intermediario en la síntesis de proteínas. Copia la información del ADN y la lleva a donde se necesita.</p>
+                    </div>
+                    <div class="concept-item">
+                        <h4>Diferencias entre ADN y ARN</h4>
+                        <div class="comparison-table">
+                            <div class="comparison-row">
+                                <div class="comparison-cell header">Característica</div>
+                                <div class="comparison-cell header">ADN</div>
+                                <div class="comparison-cell header">ARN</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-cell">Estructura</div>
+                                <div class="comparison-cell">Doble cadena</div>
+                                <div class="comparison-cell">Cadena simple</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-cell">Azúcar</div>
+                                <div class="comparison-cell">Desoxirribosa</div>
+                                <div class="comparison-cell">Ribosa</div>
+                            </div>
+                            <div class="comparison-row">
+                                <div class="comparison-cell">Bases</div>
+                                <div class="comparison-cell">A, T, G, C</div>
+                                <div class="comparison-cell">A, U, G, C</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concept-item">
+                        <h4>Tipos de ARN</h4>
+                        <div class="rna-types">
+                            <div class="rna-type-card">
+                                <i class="fas fa-envelope"></i>
+                                <h5>ARN mensajero (ARNm)</h5>
+                                <p>Transporta la información genética del ADN desde el núcleo hasta los ribosomas.</p>
+                            </div>
+                            <div class="rna-type-card">
+                                <i class="fas fa-truck"></i>
+                                <h5>ARN de transferencia (ARNt)</h5>
+                                <p>Transporta aminoácidos específicos al ribosoma durante la síntesis de proteínas.</p>
+                            </div>
+                            <div class="rna-type-card">
+                                <i class="fas fa-industry"></i>
+                                <h5>ARN ribosomal (ARNr)</h5>
+                                <p>Forma parte de los ribosomas, la maquinaria donde se fabrican las proteínas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transcripción -->
+    <section id="transcripcion" class="transcription-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-arrow-right"></i>
+                Transcripción (ADN → ARNm)
+            </h2>
+
+            <div class="process-card">
+                <div class="process-intro">
+                    <h3>¿Qué es la Transcripción?</h3>
+                    <p>La transcripción es el proceso mediante el cual se copia la información del ADN para crear una molécula de ARN mensajero (ARNm).</p>
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ocurre en el núcleo celular</span>
+                    </div>
+                </div>
+
+                <div class="key-element">
+                    <h4><i class="fas fa-wrench"></i> Enzima clave: ARN Polimerasa</h4>
+                    <p>Es la enzima encargada de "leer" el ADN y sintetizar la cadena de ARNm complementaria.</p>
+                </div>
+
+                <div class="process-steps">
+                    <h3>Etapas de la Transcripción</h3>
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Inicio</h4>
+                            <p>La ARN polimerasa se une a una región promotora del ADN. La doble hélice comienza a desenrollarse.</p>
+                            <div class="step-icon"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h4>Elongación</h4>
+                            <p>La ARN polimerasa avanza por el ADN, añadiendo nucleótidos complementarios para formar la cadena de ARNm.</p>
+                            <div class="step-icon"><i class="fas fa-arrows-alt-h"></i></div>
+                        </div>
+                        <div class="step-arrow">→</div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h4>Terminación</h4>
+                            <p>Al llegar a una señal de terminación, la ARN polimerasa se suelta y el ARNm se libera.</p>
+                            <div class="step-icon"><i class="fas fa-stop"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-result">
+                    <h4><i class="fas fa-check-circle"></i> Resultado</h4>
+                    <p>Se forma una molécula de ARN mensajero (ARNm) que contiene la información genética copiada del ADN.</p>
+                </div>
+
+                <div class="next-step">
+                    <h4><i class="fas fa-sign-out-alt"></i> Salida del ARNm</h4>
+                    <p>El ARNm sale del núcleo a través de los poros nucleares y se dirige al citoplasma, donde será traducido en proteínas.</p>
+                </div>
+
+                <!-- Esquema Visual -->
+                <div class="visual-diagram">
+                    <h4>Esquema Visual del Proceso</h4>
+                    <div class="diagram-container">
+                        <div class="diagram-stage">
+                            <div class="dna-strand">
+                                <span class="base">A</span>
+                                <span class="base">T</span>
+                                <span class="base">G</span>
+                                <span class="base">C</span>
+                                <span class="base">T</span>
+                            </div>
+                            <div class="label">ADN</div>
+                        </div>
+                        <div class="arrow-down">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>Transcripción</span>
+                        </div>
+                        <div class="diagram-stage">
+                            <div class="rna-strand">
+                                <span class="base rna">A</span>
+                                <span class="base rna">U</span>
+                                <span class="base rna">G</span>
+                                <span class="base rna">C</span>
+                                <span class="base rna">U</span>
+                            </div>
+                            <div class="label">ARNm</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traducción -->
+    <section id="traduccion" class="translation-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i>
+                Traducción y Síntesis de Proteínas
+            </h2>
+
+            <!-- Roles de los ARN -->
+            <div class="rna-roles">
+                <div class="rna-role-card mrna">
+                    <div class="role-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>ARNm (Mensajero)</h3>
+                    <ul>
+                        <li>Transporta la información genética del núcleo al ribosoma</li>
+                        <li>Contiene codones (tripletes de bases)</li>
+                        <li>Es la "receta" para construir la proteína</li>
+                    </ul>
+                </div>
+
+                <div class="rna-role-card trna">
+                    <div class="role-icon"><i class="fas fa-truck"></i></div>
+                    <h3>ARNt (Transferencia)</h3>
+                    <ul>
+                        <li>Transporta aminoácidos específicos</li>
+                        <li>Tiene un anticodón que se empareja con el codón del ARNm</li>
+                        <li>Actúa como "repartidor" de aminoácidos</li>
+                    </ul>
+                </div>
+
+                <div class="rna-role-card rrna">
+                    <div class="role-icon"><i class="fas fa-industry"></i></div>
+                    <h3>ARNr (Ribosomal)</h3>
+                    <ul>
+                        <li>Forma parte de los ribosomas</li>
+                        <li>Une los aminoácidos mediante enlaces peptídicos</li>
+                        <li>Es la "fábrica" donde se construye la proteína</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Proceso de Traducción -->
+            <div class="translation-process">
+                <h3>Proceso de la Traducción</h3>
+                <div class="translation-steps">
+                    <div class="translation-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>El ribosoma se une al ARNm</h4>
+                            <p>El ribosoma se posiciona en el codón de inicio (AUG) del ARNm.</p>
+                            <div class="step-visual">
+                                <span class="ribosome">🔵</span>
+                                <span class="mrna-visual">ARNm: <code>AUG-UUU-GCA-UAA</code></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="translation-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>El ARNt trae el aminoácido</h4>
+                            <p>Cada ARNt con su anticodón correspondiente transporta el aminoácido correcto al ribosoma.</p>
+                            <div class="step-visual">
+                                <span class="trna-visual">ARNt + Aminoácido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="translation-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Los aminoácidos se unen</h4>
+                            <p>El ribosoma une los aminoácidos mediante enlaces peptídicos, formando una cadena.</p>
+                            <div class="step-visual">
+                                <span class="amino-chain">Met-Phe-Ala...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="translation-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h4>Se forma la cadena proteica</h4>
+                            <p>La cadena de aminoácidos crece a medida que el ribosoma avanza por el ARNm.</p>
+                            <div class="step-visual">
+                                <span class="protein-chain">🔗🔗🔗🔗🔗</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="translation-step">
+                        <div class="step-num">5</div>
+                        <div class="step-content">
+                            <h4>Terminación</h4>
+                            <p>El ribosoma encuentra un codón de paro (UAA, UAG o UGA) y se libera la proteína completa.</p>
+                            <div class="step-visual">
+                                <span class="stop-codon">⛔ STOP</span>
+                                <span class="protein-complete">✅ Proteína completa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animación Interactiva -->
+            <div class="interactive-translation">
+                <h3>Simulación Interactiva</h3>
+                <div class="simulation-box">
+                    <div class="simulation-display" id="translationSimulation">
+                        <div class="sim-mrna">
+                            <span class="sim-label">ARNm:</span>
+                            <span id="simMrna">AUG-UUU-GCA-UAA</span>
+                        </div>
+                        <div class="sim-protein">
+                            <span class="sim-label">Proteína:</span>
+                            <span id="simProtein">-</span>
+                        </div>
+                    </div>
+                    <button class="sim-button" onclick="simulateTranslation()">
+                        <i class="fas fa-play"></i> Iniciar Simulación
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Código Genético -->
+    <section id="codigo" class="genetic-code-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Código Genético (Agrupación de 3 en 3)
+            </h2>
+
+            <div class="code-explanation">
+                <h3>¿Qué es un Codón?</h3>
+                <p>Un codón es una secuencia de tres nucleótidos en el ARNm que especifica qué aminoácido debe añadirse a la proteína en construcción.</p>
+                
+                <div class="codon-example">
+                    <div class="example-box">
+                        <h4>Ejemplo de Lectura</h4>
+                        <div class="sequence-reading">
+                            <div class="full-sequence">
+                                <span>A</span><span>U</span><span>G</span><span>U</span><span>U</span><span>U</span><span>G</span><span>C</span><span>A</span><span>U</span><span>A</span><span>A</span>
+                            </div>
+                            <div class="codons-separated">
+                                <div class="codon-box">
+                                    <span class="codon-seq">AUG</span>
+                                    <span class="amino">Metionina</span>
+                                    <span class="badge start">INICIO</span>
+                                </div>
+                                <div class="codon-box">
+                                    <span class="codon-seq">UUU</span>
+                                    <span class="amino">Fenilalanina</span>
+                                </div>
+                                <div class="codon-box">
+                                    <span class="codon-seq">GCA</span>
+                                    <span class="amino">Alanina</span>
+                                </div>
+                                <div class="codon-box">
+                                    <span class="codon-seq">UAA</span>
+                                    <span class="amino">-</span>
+                                    <span class="badge stop">STOP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="why-three">
+                    <h3>¿Por qué se lee de 3 en 3?</h3>
+                    <ul>
+                        <li><strong>4 bases nitrogenadas</strong> en el ARN: A, U, G, C</li>
+                        <li>Si usáramos <strong>1 base</strong> = solo 4 aminoácidos posibles (insuficiente)</li>
+                        <li>Si usáramos <strong>2 bases</strong> = 4² = 16 aminoácidos (aún insuficiente)</li>
+                        <li>Con <strong>3 bases</strong> = 4³ = <strong>64 codones</strong> (suficiente para los 20 aminoácidos)</li>
+                    </ul>
+                </div>
+
+                <div class="special-codons">
+                    <h3>Codones Especiales</h3>
+                    <div class="special-grid">
+                        <div class="special-card start-codon">
+                            <i class="fas fa-play-circle"></i>
+                            <h4>Codón de Inicio</h4>
+                            <p class="codon-display">AUG</p>
+                            <p>Codifica para Metionina y marca el inicio de la traducción</p>
+                        </div>
+                        <div class="special-card stop-codon">
+                            <i class="fas fa-stop-circle"></i>
+                            <h4>Codones de Terminación</h4>
+                            <p class="codon-display">UAA, UAG, UGA</p>
+                            <p>No codifican aminoácidos. Señalan el final de la traducción</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla del Código Genético -->
+            <div class="genetic-table-container">
+                <h3>Tabla Visual del Código Genético</h3>
+                <div class="table-legend">
+                    <span><i class="fas fa-circle" style="color: #4ECDC4"></i> Polar</span>
+                    <span><i class="fas fa-circle" style="color: #95E1D3"></i> Apolar</span>
+                    <span><i class="fas fa-circle" style="color: #FFB6B9"></i> Ácido</span>
+                    <span><i class="fas fa-circle" style="color: #C7E9FF"></i> Básico</span>
+                    <span><i class="fas fa-circle" style="color: #FFD93D"></i> Especial</span>
+                </div>
+                <div class="genetic-table" id="geneticTable">
+                    <!-- Se generará con JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proteínas -->
+    <section id="proteinas" class="proteins-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-cubes"></i>
+                Proteínas
+            </h2>
+
+            <div class="protein-intro">
+                <h3>¿Qué son las Proteínas?</h3>
+                <p>Las proteínas son moléculas grandes y complejas formadas por cadenas de aminoácidos. Son esenciales para la estructura, función y regulación de los tejidos y órganos del cuerpo.</p>
+            </div>
+
+            <div class="protein-formation">
+                <h3>¿Cómo se forman?</h3>
+                <div class="formation-diagram">
+                    <div class="formation-step">
+                        <div class="step-icon"><i class="fas fa-link"></i></div>
+                        <h4>1. Cadena de Aminoácidos</h4>
+                        <p>Los aminoácidos se unen mediante enlaces peptídicos</p>
+                    </div>
+                    <div class="arrow-right">→</div>
+                    <div class="formation-step">
+                        <div class="step-icon"><i class="fas fa-stream"></i></div>
+                        <h4>2. Estructura Primaria</h4>
+                        <p>Secuencia lineal de aminoácidos</p>
+                    </div>
+                    <div class="arrow-right">→</div>
+                    <div class="formation-step">
+                        <div class="step-icon"><i class="fas fa-bezier-curve"></i></div>
+                        <h4>3. Plegamiento</h4>
+                        <p>La cadena se pliega en una forma tridimensional</p>
+                    </div>
+                    <div class="arrow-right">→</div>
+                    <div class="formation-step">
+                        <div class="step-icon"><i class="fas fa-cube"></i></div>
+                        <h4>4. Proteína Funcional</h4>
+                        <p>Lista para realizar su función</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="protein-functions">
+                <h3>¿Para qué sirven las Proteínas?</h3>
+                <div class="functions-grid">
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-child"></i></div>
+                        <h4>Crecimiento</h4>
+                        <p>Construcción y reparación de tejidos corporales</p>
+                    </div>
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4>Defensa</h4>
+                        <p>Anticuerpos que protegen contra enfermedades</p>
+                    </div>
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Energía</h4>
+                        <p>Fuente alternativa de energía para el cuerpo</p>
+                    </div>
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-building"></i></div>
+                        <h4>Estructura</h4>
+                        <p>Componentes de músculos, piel, cabello y huesos</p>
+                    </div>
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-truck-loading"></i></div>
+                        <h4>Transporte</h4>
+                        <p>Movimiento de moléculas por el cuerpo</p>
+                    </div>
+                    <div class="function-card">
+                        <div class="function-icon"><i class="fas fa-flask"></i></div>
+                        <h4>Catálisis</h4>
+                        <p>Enzimas que aceleran reacciones químicas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="protein-examples">
+                <h3>Ejemplos de Proteínas Importantes</h3>
+                <div class="examples-container">
+                    <div class="protein-example-card hemoglobin">
+                        <div class="protein-image">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4>Hemoglobina</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Transporta oxígeno en la sangre</p>
+                            <p><strong>Ubicación:</strong> Glóbulos rojos</p>
+                            <p><strong>Importancia:</strong> Sin ella, las células no recibirían oxígeno</p>
+                        </div>
+                    </div>
+
+                    <div class="protein-example-card insulin">
+                        <div class="protein-image">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h4>Insulina</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Regula el nivel de glucosa en sangre</p>
+                            <p><strong>Ubicación:</strong> Producida en el páncreas</p>
+                            <p><strong>Importancia:</strong> Esencial para metabolizar el azúcar</p>
+                        </div>
+                    </div>
+
+                    <div class="protein-example-card enzymes">
+                        <div class="protein-image">
+                            <i class="fas fa-atom"></i>
+                        </div>
+                        <h4>Enzimas Digestivas</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Descomponen los alimentos</p>
+                            <p><strong>Ubicación:</strong> Sistema digestivo</p>
+                            <p><strong>Importancia:</strong> Permiten absorber nutrientes</p>
+                        </div>
+                    </div>
+
+                    <div class="protein-example-card collagen">
+                        <div class="protein-image">
+                            <i class="fas fa-hand-paper"></i>
+                        </div>
+                        <h4>Colágeno</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Proporciona estructura y elasticidad</p>
+                            <p><strong>Ubicación:</strong> Piel, tendones, huesos</p>
+                            <p><strong>Importancia:</strong> La proteína más abundante del cuerpo</p>
+                        </div>
+                    </div>
+
+                    <div class="protein-example-card antibodies">
+                        <div class="protein-image">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Anticuerpos</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Defienden contra patógenos</p>
+                            <p><strong>Ubicación:</strong> Sistema inmunológico</p>
+                            <p><strong>Importancia:</strong> Protección contra enfermedades</p>
+                        </div>
+                    </div>
+
+                    <div class="protein-example-card actin">
+                        <div class="protein-image">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h4>Actina y Miosina</h4>
+                        <div class="protein-details">
+                            <p><strong>Función:</strong> Permiten la contracción muscular</p>
+                            <p><strong>Ubicación:</strong> Células musculares</p>
+                            <p><strong>Importancia:</strong> Responsables del movimiento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicaciones -->
+    <section id="aplicaciones" class="applications-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                Aplicaciones
+            </h2>
+
+            <div class="applications-intro">
+                <p>El conocimiento del flujo de información genética (ADN → ARN → Proteína) ha revolucionado la ciencia y la medicina moderna.</p>
+            </div>
+
+            <div class="applications-grid">
+                <div class="application-card medical">
+                    <div class="app-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Medicina Genética</h3>
+                    <div class="app-content">
+                        <p>Diagnóstico y tratamiento de enfermedades hereditarias mediante el análisis del ADN.</p>
+                        <ul>
+                            <li>Terapia génica para corregir genes defectuosos</li>
+                            <li>Diagnóstico prenatal de enfermedades genéticas</li>
+                            <li>Medicina personalizada basada en el perfil genético</li>
+                            <li>Identificación de predisposiciones a enfermedades</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card vaccines">
+                    <div class="app-icon"><i class="fas fa-syringe"></i></div>
+                    <h3>Vacunas</h3>
+                    <div class="app-content">
+                        <p>Desarrollo de vacunas innovadoras utilizando tecnología de ARN mensajero.</p>
+                        <ul>
+                            <li>Vacunas de ARNm (como las de COVID-19)</li>
+                            <li>Producción rápida de vacunas ante nuevas enfermedades</li>
+                            <li>Vacunas contra el cáncer en investigación</li>
+                            <li>Mayor seguridad y eficacia</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card insulin">
+                    <div class="app-icon"><i class="fas fa-prescription-bottle"></i></div>
+                    <h3>Producción de Insulina</h3>
+                    <div class="app-content">
+                        <p>Uso de bacterias genéticamente modificadas para producir insulina humana.</p>
+                        <ul>
+                            <li>Insulina recombinante para diabéticos</li>
+                            <li>Producción a gran escala y bajo costo</li>
+                            <li>Mayor pureza y menos efectos secundarios</li>
+                            <li>Disponibilidad constante del medicamento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card biotech">
+                    <div class="app-icon"><i class="fas fa-microscope"></i></div>
+                    <h3>Biotecnología</h3>
+                    <div class="app-content">
+                        <p>Aplicación de principios biológicos para crear productos y tecnologías.</p>
+                        <ul>
+                            <li>Organismos modificados genéticamente (OMG)</li>
+                            <li>Producción de enzimas industriales</li>
+                            <li>Biocombustibles más eficientes</li>
+                            <li>Degradación de contaminantes ambientales</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card agriculture">
+                    <div class="app-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Agricultura</h3>
+                    <div class="app-content">
+                        <p>Mejoramiento genético de cultivos para aumentar productividad y resistencia.</p>
+                        <ul>
+                            <li>Cultivos resistentes a plagas y sequías</li>
+                            <li>Alimentos con mayor valor nutricional</li>
+                            <li>Reducción del uso de pesticidas</li>
+                            <li>Mayor rendimiento de cosechas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="application-card forensic">
+                    <div class="app-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Ciencias Forenses</h3>
+                    <div class="app-content">
+                        <p>Uso del análisis de ADN para investigaciones criminales y de paternidad.</p>
+                        <ul>
+                            <li>Identificación de personas mediante ADN</li>
+                            <li>Resolución de casos criminales</li>
+                            <li>Pruebas de paternidad</li>
+                            <li>Identificación de restos humanos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Recursos Educativos
+            </h2>
+
+            <!-- Glosario -->
+            <div class="resource-card glossary">
+                <h3><i class="fas fa-book"></i> Glosario de Términos</h3>
+                <div class="glossary-container">
+                    <div class="glossary-item">
+                        <strong>Adenina (A):</strong> Una de las cuatro bases nitrogenadas del ADN y ARN.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Aminoácido:</strong> Unidad básica que forma las proteínas. Existen 20 tipos diferentes.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Anticodón:</strong> Secuencia de tres nucleótidos en el ARNt que se empareja con el codón del ARNm.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Citosina (C):</strong> Base nitrogenada presente en ADN y ARN.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Codón:</strong> Secuencia de tres nucleótidos en el ARNm que especifica un aminoácido.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Doble Hélice:</strong> Estructura tridimensional del ADN formada por dos cadenas enrolladas.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Enzima:</strong> Proteína que acelera reacciones químicas en el organismo.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Gen:</strong> Segmento de ADN que contiene la información para producir una proteína.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Genoma:</strong> Todo el material genético de un organismo.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Guanina (G):</strong> Base nitrogenada presente en ADN y ARN.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Nucleótido:</strong> Unidad básica del ADN y ARN (base + azúcar + fosfato).
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Ribosoma:</strong> Orgánulo celular donde se sintetizan las proteínas.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Timina (T):</strong> Base nitrogenada presente solo en el ADN.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Transcripción:</strong> Proceso de copia de ADN a ARN.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Traducción:</strong> Proceso de síntesis de proteínas a partir de ARNm.
+                    </div>
+                    <div class="glossary-item">
+                        <strong>Uracilo (U):</strong> Base nitrogenada presente solo en el ARN (reemplaza a la timina).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videos Educativos -->
+            <div class="resource-card videos">
+                <h3><i class="fas fa-video"></i> Videos Educativos Recomendados</h3>
+                <div class="video-links">
+                    <div class="video-item">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <h4>¿Qué es el ADN y cómo funciona?</h4>
+                            <p>Explicación animada de la estructura y función del ADN</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <h4>De ADN a ARN: Transcripción</h4>
+                            <p>Proceso detallado de transcripción con animaciones 3D</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <h4>Síntesis de Proteínas: Traducción</h4>
+                            <p>Cómo el ribosoma construye proteínas paso a paso</p>
+                        </div>
+                    </div>
+                    <div class="video-item">
+                        <i class="fas fa-play-circle"></i>
+                        <div>
+                            <h4>El Código Genético Explicado</h4>
+                            <p>Comprende cómo funcionan los codones y aminoácidos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simuladores -->
+            <div class="resource-card simulators">
+                <h3><i class="fas fa-gamepad"></i> Simuladores Interactivos</h3>
+                <div class="simulator-grid">
+                    <div class="simulator-item">
+                        <i class="fas fa-dna"></i>
+                        <h4>Constructor de ADN</h4>
+                        <p>Construye tu propia molécula de ADN y visualiza su estructura</p>
+                        <button class="resource-button" onclick="alert('Funcionalidad en desarrollo')">Explorar</button>
+                    </div>
+                    <div class="simulator-item">
+                        <i class="fas fa-arrow-right"></i>
+                        <h4>Simulador de Transcripción</h4>
+                        <p>Observa cómo el ADN se transcribe a ARN en tiempo real</p>
+                        <button class="resource-button" onclick="alert('Funcionalidad en desarrollo')">Explorar</button>
+                    </div>
+                    <div class="simulator-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Fábrica de Proteínas</h4>
+                        <p>Simula el proceso completo de síntesis de proteínas</p>
+                        <button class="resource-button" onclick="alert('Funcionalidad en desarrollo')">Explorar</button>
+                    </div>
+                    <div class="simulator-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Decodificador Genético</h4>
+                        <p>Traduce secuencias de ARN a cadenas de aminoácidos</p>
+                        <button class="resource-button" onclick="alert('Funcionalidad en desarrollo')">Explorar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referencias -->
+            <div class="resource-card references">
+                <h3><i class="fas fa-link"></i> Referencias Científicas Confiables</h3>
+                <div class="reference-list">
+                    <div class="reference-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>National Center for Biotechnology Information (NCBI)</h4>
+                            <p>Base de datos de genética y biología molecular</p>
+                            <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">ncbi.nlm.nih.gov</a>
+                        </div>
+                    </div>
+                    <div class="reference-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>Khan Academy - Biología Molecular</h4>
+                            <p>Cursos gratuitos sobre genética y biología celular</p>
+                            <a href="https://www.khanacademy.org/" target="_blank">khanacademy.org</a>
+                        </div>
+                    </div>
+                    <div class="reference-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>Nature Education</h4>
+                            <p>Artículos científicos sobre genética y biotecnología</p>
+                            <a href="https://www.nature.com/scitable" target="_blank">nature.com/scitable</a>
+                        </div>
+                    </div>
+                    <div class="reference-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>Genome.gov</h4>
+                            <p>Instituto Nacional de Investigación del Genoma Humano</p>
+                            <a href="https://www.genome.gov/" target="_blank">genome.gov</a>
+                        </div>
+                    </div>
+                    <div class="reference-item">
+                        <i class="fas fa-external-link-alt"></i>
+                        <div>
+                            <h4>DNA Learning Center</h4>
+                            <p>Recursos educativos interactivos sobre ADN y genética</p>
+                            <a href="https://www.dnalc.org/" target="_blank">dnalc.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-dna"></i> El Rincón del Genoma</h3>
+                    <p>Plataforma educativa dedicada a la enseñanza de genética molecular y biología celular.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#conceptos">Conceptos</a></li>
+                        <li><a href="#transcripcion">Transcripción</a></li>
+                        <li><a href="#traduccion">Traducción</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Más Información</h4>
+                    <ul>
+                        <li><a href="#codigo">Código Genético</a></li>
+                        <li><a href="#proteinas">Proteínas</a></li>
+                        <li><a href="#aplicaciones">Aplicaciones</a></li>
+                        <li><a href="#recursos">Recursos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 El Rincón del Genoma. Todos los derechos reservados. | Educación científica de calidad para todos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
